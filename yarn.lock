@@ -238,7 +238,7 @@
   "resolved" "https://registry.npmmirror.com/csstype/-/csstype-2.6.20.tgz"
   "version" "2.6.20"
 
-"dayjs@^1.11.3":
+"dayjs@^1.11.3", "dayjs@^1.11.5":
   "integrity" "sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA=="
   "resolved" "https://registry.npmmirror.com/dayjs/-/dayjs-1.11.5.tgz"
   "version" "1.11.5"
@@ -247,6 +247,14 @@
   "integrity" "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ=="
   "resolved" "https://registry.npmmirror.com/delayed-stream/-/delayed-stream-1.0.0.tgz"
   "version" "1.0.0"
+
+"echarts@^5.3.3":
+  "integrity" "sha512-BRw2serInRwO5SIwRviZ6Xgm5Lb7irgz+sLiFMmy/HOaf4SQ+7oYqxKzRHAKp4xHQ05AuHw1xvoQWJjDQq/FGw=="
+  "resolved" "https://registry.npmmirror.com/echarts/-/echarts-5.3.3.tgz"
+  "version" "5.3.3"
+  dependencies:
+    "tslib" "2.3.0"
+    "zrender" "5.3.2"
 
 "element-plus@^2.2.13":
   "integrity" "sha512-dKQ7BPZC8deUPhv+6s4GgOL0GyGj3KpUarywxm6s1nWnHjH6FqeZlUcxPqBvJd7W/d81POayx3B13GP+rfkG9g=="
@@ -524,6 +532,11 @@
   dependencies:
     "is-number" "^7.0.0"
 
+"tslib@2.3.0":
+  "integrity" "sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg=="
+  "resolved" "https://registry.npmmirror.com/tslib/-/tslib-2.3.0.tgz"
+  "version" "2.3.0"
+
 "vite@^3.0.0", "vite@^3.0.7":
   "integrity" "sha512-AOZ4eN7mrkJiOLuw8IA7piS4IdOQyQCA81GxGsAQvAZzMRi9ZwGB3TOaYsj4uLAWK46T5L4AfQ6InNGlxX30IQ=="
   "resolved" "https://registry.npmmirror.com/vite/-/vite-3.0.8.tgz"
@@ -565,3 +578,10 @@
   "version" "4.0.2"
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.11"
+
+"zrender@5.3.2":
+  "integrity" "sha512-8IiYdfwHj2rx0UeIGZGGU4WEVSDEdeVCaIg/fomejg1Xu6OifAL1GVzIPHg2D+MyUkbNgPWji90t0a8IDk+39w=="
+  "resolved" "https://registry.npmmirror.com/zrender/-/zrender-5.3.2.tgz"
+  "version" "5.3.2"
+  dependencies:
+    "tslib" "2.3.0"

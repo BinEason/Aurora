@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../config'
 import { ElMessage } from 'element-plus'
-// import router from '../router'
+import router from '../router'
 const NET_Error = "网络异常"
 
 const server = axios.create({
@@ -12,7 +12,9 @@ const server = axios.create({
 //请求拦截
 server.interceptors.request.use((req) => {
     const headers = req.headers
-    if (!headers.Authorization) headers.Authorization = 'Bear CGB'
+    const { token } = JSON.parse(localStorage.getItem('cgb'))
+
+    if (!headers.Authorization) headers.Authorization = 'Bearer ' + token
 
     return req;
 })
@@ -24,8 +26,11 @@ server.interceptors.response.use((res) => {
     if (code === 200) {
         return data
     }
-    else if (code === 50001) {
+    else if (code === 500001) {
         ElMessage.error(msg)
+        setTimeout(() => {
+            router.push('/login')
+        }, 1500)
         return Promise.reject(msg)
     }
     else {
@@ -39,13 +44,14 @@ function request(options) {
     if (options.method.toLowerCase() === 'get') {
         options.params = options.data
     }
+    let ismock = config.mock
     if (typeof options.mock !== 'undefined') {
-        config.mock = options.mock
+        ismock = options.mock
     }
     if (config.env === 'prod') {
         server.defaults.baseURL = config.baseApi
     } else {
-        server.defaults.baseURL = config.mock ? config.mockApi : config.baseApi
+        server.defaults.baseURL = ismock ? config.mockApi : config.baseApi
     }
     return server(options)
 }

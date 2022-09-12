@@ -1,12 +1,12 @@
-import {createStore} from 'vuex'
-import mutations from './mutations'
-import storage from '../utils/storage'
+import { createStore } from 'vuex'
+// import mutations from './mutations'
+// import storage from '../utils/storage'
+import user from './user'
 
-const state ={
-    userInfo: '' || storage.getItem('userInfo')
-}
+
 
 export default createStore({
-    state,
-    mutations
+    modules: {
+        'm_user': user
+    }
 })

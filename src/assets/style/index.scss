@@ -1,6 +1,8 @@
 html, body {
   height: 100%;
   width: 100%;
+
+
 }
 *:not([class^='el-']) {
   box-sizing: border-box;
@@ -76,7 +78,8 @@ a{
     border-bottom: 1px solid #ece8e8;
   }
   .pagination {
-    text-align: right;
+    display: flex;
     padding: 10px;
+    justify-content: flex-end;
   }
 }
